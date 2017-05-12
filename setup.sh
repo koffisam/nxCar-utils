@@ -12,3 +12,4 @@ mv --backup=numbered config /etc/kbd/
 mv --backup=numbered dphys-swapfile /etc/
 /etc/init.d/dphys-swapfile stop
 /etc/init.d/dphys-swapfile start
+bash nxCar-utils-master/install.sh
