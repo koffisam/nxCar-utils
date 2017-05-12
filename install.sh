@@ -51,3 +51,12 @@ cd /home/pi/misc
 wget https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v0.4.8/go-ipfs_v0.4.8_linux-arm.tar.gz
 untar -xvzf  go-ipfs_v0.4.8_linux-arm.tar.gz go-ipfs
 mv go-ipfs/ipfs /usr/bin/ipfs
+
+
+echo 'Running tests' >&2
+
+if  [ -x "$(command -v ipfs)" ]; then
+  echo 'IPFS sucessfully installed.' >&2
+fi
+
+echo "Please verify geth installation"
