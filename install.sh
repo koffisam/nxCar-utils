@@ -60,3 +60,6 @@ if  [ -x "$(command -v ipfs)" ]; then
 fi
 
 echo "Please verify geth installation"
+
+echo "cleaning up"
+rm -rf /home/pi/misc
