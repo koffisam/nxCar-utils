@@ -36,9 +36,17 @@ pip install virtualenv
 wget https://storage.googleapis.com/golang/go1.7.1.linux-armv6l.tar.gz
 tar -xvzf go1.7.1.linux-armv6l.tar.gz go
 # sudo cp /home/pi/misc/go/bin/go /usr/bin/go
-sudo cp /home/pi/misc/go /usr/bin/
-export PATH=$PATH:/usr/bin/go/bin/go
+
+####redudnant I know!####
+
+sudo cp -r /home/pi/misc/go /usr/bin/
+
+sudo cp /home/pi/misc/go/bin/go /usr/bin/go
+export PATH=$PATH:/usr/bin/go
+
 export GOROOT=/usr/bin/go/
+export GOPATH=/usr/bin/go/go
+export PATH=$PATH:$GOPATH
 
 
 
