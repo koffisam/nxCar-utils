@@ -10,7 +10,7 @@ if ! [ -x "$(command -v git)" ]; then
   sudo apt-get install -y  git 
 fi
 
-cd ~/
+cd /home/pi/
 mkdir misc
 cd misc
 
@@ -18,7 +18,7 @@ cd misc
 if ! [ -x "$(command -v node)" ]; then
   	echo 'LOG: node is not installed.' >&2
   	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-	source ~/.bashrc
+	source /home/pi/.bashrc
 	nvm install v6.10.3
 	nvm alias default v6.10.3
 	sudo rm /usr/bin/node
@@ -35,7 +35,7 @@ pip install virtualenv
 #Golang installation
 wget https://storage.googleapis.com/golang/go1.7.1.linux-armv6l.tar.gz
 tar -xvzf go1.7.1.linux-armv6l.tar.gz go
-sudo cp ~/misc/go/bin/go /usr/bin/go
+sudo cp /home/pi/misc/go/bin/go /usr/bin/go
 export PATH=$PATH:/usr/bin/go
 export GOROOT=/usr/bin/
 
@@ -47,7 +47,7 @@ make geth
 sudo cp build/bin/geth /usr/bin/
 
 #install Ipfs
-cd ~/misc
+cd /home/pi/misc
 wget https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v0.4.8/go-ipfs_v0.4.8_linux-arm.tar.gz
 untar -xvzf  go-ipfs_v0.4.8_linux-arm.tar.gz go-ipfs
 mv go-ipfs/ipfs /usr/bin/ipfs
