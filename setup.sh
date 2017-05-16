@@ -7,6 +7,7 @@
 
 curl -LOk https://github.com/koffisam/nxCar-utils/archive/master.zip
 unzip  master.zip 
+chown -R pi:pi nxCar-utils-master/
 cd nxCar-utils-master
 mv --backup=numbered config /etc/kbd/
 mv --backup=numbered dphys-swapfile /etc/

@@ -12,21 +12,27 @@ fi
 
 cd /home/pi/
 mkdir misc
+chown -R pi:pi /home/pi/misc
 cd misc
+
 
 
 if ! [ -x "$(command -v node)" ]; then
   	echo 'LOG: node is not installed.' >&2
-  	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sudo -u pi bash
-	source /home/pi/.bashrc
-	nvm install v6.10.3
-	nvm alias default v6.10.3
-	sudo rm /usr/bin/node
-	sudo rm /usr/bin/npm
-	sudo ln -s /home/pi/.nvm/versions/node/v6.10.3/bin/node /usr/bin/node
-	sudo ln -s /home/pi/.nvm/versions/node/v6.10.3/bin/npm /usr/bin/npm
+  	wget https://nodejs.org/dist/v7.9.0/node-v7.9.0-linux-armv6l.tar.gz
+  	tar -xvzf node-v7.9.0-linux-armv6l.tar.gz node-v7
+  	cd node-v7
+  	sudo cp -R * /usr/local/
+ #  	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sudo -u pi bash
+	# source /home/pi/.bashrc
+	# nvm install v6.10.3
+	# nvm alias default v6.10.3
+	# sudo rm /usr/bin/node
+	# sudo rm /usr/bin/npm
+	# sudo ln -s /home/pi/.nvm/versions/node/v6.10.3/bin/node /usr/bin/node
+	# sudo ln -s /home/pi/.nvm/versions/node/v6.10.3/bin/npm /usr/bin/npm
 	node -v
-	npm -v
+	# npm -v
 fi
 
 sudo apt-get install -y mercurial gcc libc6-dev screen python-pip golang 
@@ -35,24 +41,23 @@ pip install virtualenv
 #Golang installation
 wget https://storage.googleapis.com/golang/go1.7.1.linux-armv6l.tar.gz
 tar -xvzf go1.7.1.linux-armv6l.tar.gz go
-# sudo cp /home/pi/misc/go/bin/go /usr/bin/go
 
 ####redudnant I know!####
 
-sudo cp -r /home/pi/misc/go /usr/bin/
+# sudo cp -r /home/pi/misc/go /usr/bin/
 
 sudo cp /home/pi/misc/go/bin/go /usr/bin/go
-export PATH=$PATH:/usr/bin/go
+# export PATH=$PATH:/usr/bin/go
 
-export GOROOT=/usr/bin/go/
-export GOPATH=/usr/bin/go/go
+# export GOROOT=/usr/bin/
+export GOROOT=/home/pi/misc/go
+export GOPATH=/usr/bin/go
 export PATH=$PATH:$GOPATH
-
 
 
 #install Ethereum
 git clone https://github.com/ethereum/go-ethereum.git
-
+# export GOROOT=/usr/bin/go/
 cd go-ethereum/
 mkdir /home/pi/misc/go-ethereum/build/_workspace/pkg
 chmod -R 777 /home/pi/misc/go-ethereum/
