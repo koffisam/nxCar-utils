@@ -19,6 +19,7 @@ cd misc
 
 if ! [ -x "$(command -v node)" ]; then
   	echo 'LOG: node is not installed.' >&2
+  	sudo apt-get install -y  npm
   	wget https://nodejs.org/dist/v7.9.0/node-v7.9.0-linux-armv6l.tar.gz
   	tar -xvzf node-v7.9.0-linux-armv6l.tar.gz node-v7
   	cd node-v7
@@ -32,7 +33,7 @@ if ! [ -x "$(command -v node)" ]; then
 	# sudo ln -s /home/pi/.nvm/versions/node/v6.10.3/bin/node /usr/bin/node
 	# sudo ln -s /home/pi/.nvm/versions/node/v6.10.3/bin/npm /usr/bin/npm
 	node -v
-	# npm -v
+	npm -v
 fi
 
 sudo apt-get install -y mercurial gcc libc6-dev screen python-pip golang 
