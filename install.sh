@@ -39,6 +39,7 @@ fi
 sudo apt-get install -y mercurial gcc libc6-dev screen python-pip golang 
 pip install virtualenv
 
+cd  /home/pi/misc/
 #Golang installation
 wget https://storage.googleapis.com/golang/go1.7.1.linux-armv6l.tar.gz
 tar -xvzf go1.7.1.linux-armv6l.tar.gz go
