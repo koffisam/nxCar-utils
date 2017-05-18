@@ -22,7 +22,7 @@ if ! [ -x "$(command -v node)" ]; then
   	sudo apt-get install -y  npm
   	wget https://nodejs.org/dist/v7.9.0/node-v7.9.0-linux-armv6l.tar.gz
   	tar -xvzf node-v7.9.0-linux-armv6l.tar.gz node-v7
-  	cd node-v7
+  	cd node-v7.9.0-linux-armv6l
   	sudo cp -R * /usr/local/
  #  	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | sudo -u pi bash
 	# source /home/pi/.bashrc
@@ -59,7 +59,6 @@ export PATH=$PATH:$GOPATH
 
 #install Ethereum
 git clone https://github.com/ethereum/go-ethereum.git
-# export GOROOT=/usr/bin/go/
 cd go-ethereum/
 mkdir /home/pi/misc/go-ethereum/build/_workspace/pkg
 chmod -R 777 /home/pi/misc/go-ethereum/
