@@ -67,9 +67,13 @@ sudo cp build/bin/geth /usr/bin/
 
 #install Ipfs
 cd /home/pi/misc
-wget https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v0.4.8/go-ipfs_v0.4.8_linux-arm.tar.gz
-tar -xvzf  go-ipfs_v0.4.8_linux-arm.tar.gz go-ipfs
-mv go-ipfs/ipfs /usr/bin/ipfs
+wget https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v0.4.9/go-ipfs_v0.4.9_linux-arm.tar.gz
+tar -xvzf  go-ipfs_v0.4.9_linux-arm.tar.gz go-ipfs
+bash go-ipfs/install.sh
+
+wget https://dist.ipfs.io/ipfs-update/v1.5.2/ipfs-update_v1.5.2_linux-amd64.tar.gz
+tar -xvzf  ipfs-update_v1.5.2_linux-amd64.tar.gz ipfs-update
+bash ipfs-update/install.sh
 
 
 echo 'Running tests' >&2
